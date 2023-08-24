@@ -117,18 +117,28 @@ Three tables are required:
 
 ```CREATE TABLE``` files are included
 
-### `hourly`
+<br>
+
+### hourly
+
+| Column      | Type             | |
+| ----------- | --------------------- | - |
+| date | date | Date of Count |
+| time | time | Time of Count |
+| ride | text | Ride Name |
+| units | int | Number of Trains, Channels, RVs, Cars, etc |
+| cycles | int | Ride Cycle Count |
+| empty | int | Empty Seats |
+| hourly | int | Calculated Count |
+| wait | int | Ride Wait Time in Minutes |
+
+### hourly
 
 | `Column`      | `Type`             |
 | ----------- | --------------------- |
-| date | date |
-| time | time |
 | ride | text |
-| units | int |
-| cycles | int |
-| empty | int |
-| hourly | int |
-| wait | int | 
+| mac | text |
+
 
 ## Installation
 
