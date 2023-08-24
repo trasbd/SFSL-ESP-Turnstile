@@ -180,6 +180,8 @@ $DB_NAME = "YOUR DB NAME";
 ?>
    ```
 
+CSS files are not included
+
 ### Turnstile Report
 
 Page has not been developed
