@@ -113,7 +113,12 @@ Parts List with Amazon links and cost can be found here: <br><a href="Hardware/T
 #define SECRET_PASS "YOUR SSID PASSWORD"
    ```
 
+
 <br><img style="width: 50%; height: auto; " src="Hardware/Turnstile_bb.png">
+<br>
+
+### Sample LCD Display
+<img style="width: 50%; height: auto; " src="Hardware/LCD_Backlight_Label.jpg">
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
