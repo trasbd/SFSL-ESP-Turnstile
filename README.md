@@ -101,7 +101,7 @@
 
 <br>
 
-`secrets.h` will need to be created with the following content. Replace `YOUR SSID` and `YOUR SSID PASSWORD` with the appropriate information.
+`secrets.h` will need to be created, in the Arduino Project, with the following content. Replace `YOUR SSID` and `YOUR SSID PASSWORD` with the appropriate information.
 
    ```c
 #define SECRET_SSID "YOUR SSID"
