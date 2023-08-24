@@ -101,7 +101,12 @@
 
 <br>
 
-`secrets.h` will need to be created, in the Arduino Project, with the following content. Replace `YOUR SSID` and `YOUR SSID PASSWORD` with the appropriate information.
+Parts List with links and cost can be found here: <br><a href="Hardware/Turnstile Cost.xlsx"> Parts List </a>
+
+<br>
+
+`secrets.h` will need to be created, in the Arduino Project, with the following content
+<br>Replace `YOUR SSID` and `YOUR SSID PASSWORD` with the appropriate information
 
    ```c
 #define SECRET_SSID "YOUR SSID"
@@ -170,7 +175,8 @@ Instructions for setting up PHP with IIS can be found here:
 
 `index.php` should be added to the web server list of default pages.
 
-`secrets.php` will need to be created with the following content. Replace defaults with appropriate information.
+`secrets.php` will need to be created with the following content
+<br>Replace defaults with appropriate information
 
    ```php
 <?php
