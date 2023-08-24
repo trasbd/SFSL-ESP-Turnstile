@@ -108,7 +108,7 @@
 #define SECRET_PASS "YOUR SSID PASSWORD"
    ```
 
-<br><img style="max-width: 50%; height: auto; " src="Hardware/Turnstile_bb.png">
+<br><img style="max-width: 35%; height: auto; " src="Hardware/Turnstile_bb.png">
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
