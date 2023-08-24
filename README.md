@@ -101,7 +101,7 @@
 
 <br>
 
-Parts List with links and cost can be found here: <br><a href="Hardware/Turnstile Cost.xlsx"> Parts List </a>
+Parts List with Amazon links and cost can be found here: <br><a href="Hardware/Turnstile Cost.xlsx"> Parts List </a>
 
 <br>
 
