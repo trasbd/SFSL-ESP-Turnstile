@@ -9,7 +9,6 @@
 -->
 
 
-
 <!-- PROJECT SHIELDS -->
 <!--
 *** I'm using markdown "reference style" links for readability.
@@ -24,7 +23,6 @@
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
-
 
 
 <!-- PROJECT LOGO -->
@@ -49,7 +47,6 @@
 </div>
 
 
-
 <!-- TABLE OF CONTENTS -->
 <details>
   <summary>Table of Contents</summary>
@@ -61,17 +58,13 @@
       </ul>
     </li>
     <li><a href="#hardware">Hardware</a></li>
-        <li><a href="#database">Database</a></li>
-        <li><a href="#web">Web Files</a></li>
-    <li><a href="#usage">Usage</a></li>
+    <li><a href="#database">Database</a></li>
+    <li><a href="#web-server">Web Server</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
-
 
 
 <!-- ABOUT THE PROJECT -->
@@ -86,7 +79,6 @@
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-
 ### Built With
 
 ![Arduino](https://img.shields.io/badge/-Arduino-00979D?style=for-the-badge&logo=Arduino&logoColor=white)
@@ -97,7 +89,6 @@
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-
 <!-- GETTING STARTED -->
 ## Hardware
 
@@ -106,7 +97,18 @@
 * 4 x Momentary Push Button
 * 4 x 10kΩ Resistor
 
+<br>
+
+`secrets.h` will need to be created with the following content. Replace `YOUR SSID` and `YOUR SSID PASSWORD` with the appropriate information.
+
+   ```c
+#define SECRET_SSID "YOUR SSID"
+#define SECRET_PASS "YOUR SSID PASSWORD"
+   ```
+
 <br><img style="max-width: 50%; height: auto; " src="Hardware/Turnstile_bb.png">
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Database
 
@@ -115,13 +117,19 @@ Three tables are required:
 * seats
 * mac
 
-```CREATE TABLE``` files are included
+`seats` needs to be populated with Rides Names and Seats
+<br>
+`mac` needs to be populated with the ESP MAC Addresses, Ride assignment can be done from the Web Interface 
+
+Sample ```CREATE TABLE``` files are included
+<br>
+Sample data set for `seats` is included
 
 <br>
 
 ### hourly
 
-| Column      | Type             | |
+| Column      | Type             | Description |
 | ----------- | --------------------- | - |
 | date | date | Date of Count |
 | time | time | Time of Count |
@@ -132,36 +140,48 @@ Three tables are required:
 | hourly | int | Calculated Count |
 | wait | int | Ride Wait Time in Minutes |
 
-### hourly
+### seats
 
-| `Column`      | `Type`             |
-| ----------- | --------------------- |
-| ride | text |
-| mac | text |
+| Column      | Type             | Description |
+| ----------- | --------------------- | - |
+| ride | text | Ride Name |
+| seats | int | Total Number of Seats per Cycle |
+
+### mac
+
+| Column      | Type             | Description |
+| ----------- | --------------------- | - |
+| ride | text | Ride Name |
+| mac | text | MAC address of ESP8266 |
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-## Installation
+## Web Server
 
-1. Setup Google Workspace API [https://developers.google.com/calendar/api/quickstart/python](https://developers.google.com/calendar/api/quickstart/python)
-2. Clone the repo
-   ```sh
-   git clone https://github.com/trasbd/SFSL-ESP-Turnstile.git
-   ```
-3. Place ```credentials.json``` in base folder
+This project was tested using `Windows Server 2019` running `IIS`, `Microsft SQL Server 2022`, and `PHP 8.2.9`
 
-4. Enter your Badge and Calendar (optional) information in `secrects.py`
-   ```python
-   company = "sfsl"
-   eid = "YOUR_EID"
-   pin = "YOUR_PIN"
-   calendarId = "primary"
+Project assumes that the IIS Server and MSSQL Server are on the same host.
+
+Instructions for setting up PHP with IIS can be found here:
+<br><a href="">CHANGE LINK</a>
+
+`index.php` should be added to the web server list of default pages.
+
+`secrets.php` will need to be created with the following content. Replace defaults with appropriate information.
+
+   ```php
+<?php
+$DB_USER = "YOUR DB USER";
+$DB_PASS = "YOUR DB USER PASSWORD";
+$DB_NAME = "YOUR DB NAME";
+?>
    ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-
-<!-- USAGE EXAMPLES -->
+<!-- USAGE EXAMPLES 
 ## Usage
 
    ```python
@@ -169,23 +189,23 @@ Three tables are required:
    ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
+-->
 
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Update Calendar Events
-- [ ] Import Timesheets
+Project has not been adopted and development has stopped.
 
+- [ ] Create Individual Turnstile Report Page
+- [ ] Create Prototype Case
+- [ ] Test on Site
 
 See the [open issues](https://github.com/trasbd/SFSL-ESP-Turnstile/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-
-<!-- CONTRIBUTING -->
+<!-- CONTRIBUTING 
 ## Contributing
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
@@ -201,13 +221,12 @@ Don't forget to give the project a star! Thanks again!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
+-->
 
 <!-- LICENSE -->
 ## License
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 
 <!-- CONTACT -->
@@ -220,13 +239,12 @@ Project Link: [https://github.com/trasbd/SFSL-ESP-Turnstile](https://github.com/
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-
-<!-- ACKNOWLEDGMENTS -->
+<!-- ACKNOWLEDGMENTS 
 ## Acknowledgments
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
+-->
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
@@ -243,3 +261,4 @@ Project Link: [https://github.com/trasbd/SFSL-ESP-Turnstile](https://github.com/
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/thomas-robert-142b02b2
 [product-screenshot]: images/screenshot.png
+
