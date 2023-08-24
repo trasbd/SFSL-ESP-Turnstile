@@ -71,7 +71,9 @@
 ## About The Project
 
 <P>Replaces mechanical turnstile/clicker and manual calculation with an ESP8266 that automatically reports counts to an MSSQL Server. 
-<br>The ESP uses HTTP POST/GET requests that are handled by an IIS server running PHP.</p>
+<br>The ESP uses HTTP POST/GET requests that are handled by an IIS server running PHP.
+<br>
+<br> <b>NOTE:</b> Project has not been adopted and development has stopped.</p>
 
 <!--
 <br><img style="max-width: 50%; height: auto; " src="googlecal.png"> -->
@@ -178,6 +180,32 @@ $DB_NAME = "YOUR DB NAME";
 ?>
    ```
 
+### Turnstile Report
+
+Page has not been developed
+<br>
+<br>
+Displays all the hourlies from one ride for the selected day and park hours
+<br>Displays the accumulated riders, percent utilization, and rides per guest
+
+### Hourly
+
+Displays the hourly count from all rides at the selected Date/Time
+<br>Defaults to the most recent hourly
+
+<img style="max-width: 40%; height: auto;" src="Web Files/Hourly_Screenshot.png" />
+
+### Assign Clicker
+
+Allows easy assignment of the ESP to Rides.
+<br> The assignment allows the ESP to pull in the number of seats and post the correct ride name
+<br><br>
+MAC Addresses are pulled from the `mac` table
+<br>Ride Names are pulled from the `seats` table
+
+<img style="max-width: 40%; height: auto;" src="Web Files/Assign_Screenshot.png" />
+
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
@@ -197,6 +225,7 @@ $DB_NAME = "YOUR DB NAME";
 Project has not been adopted and development has stopped.
 
 - [ ] Create Individual Turnstile Report Page
+- [ ] Add Capacities
 - [ ] Create Prototype Case
 - [ ] Test on Site
 
