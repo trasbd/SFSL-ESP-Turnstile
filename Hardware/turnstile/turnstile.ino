@@ -13,7 +13,7 @@
 const char *ssid = SECRET_SSID;
 const char *password = SECRET_PASS;
 
-const char *serverName = "http://tmr19vm001/post-hourly.php";
+const char *serverName = "http://trasbd.net/post-hourly.php";
 
 LiquidCrystal_PCF8574 lcd(0x27); // set the LCD address to 0x27 for a 16 chars and 2 line display
 
@@ -84,9 +84,10 @@ void setup()
 
   WiFiClient client;
   HTTPClient http;
-  http.begin(client, "http://tmr19vm001/get-seats.php?mac=" + WiFi.macAddress());
+  http.begin(client, "http://trasbd.net/get-seats.php?mac=" + WiFi.macAddress());
   http.GET();
   String getResult = http.getString();
+  //Serial.println(getResult);
   int bracketIndex = getResult.indexOf('<');
   seats = getResult.substring(0, bracketIndex).toInt();
   rideName = getResult.substring(bracketIndex + 4);
