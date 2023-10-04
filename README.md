@@ -101,14 +101,24 @@
 
 <br>
 
-`secrets.h` will need to be created, in the Arduino Project, with the following content. Replace `YOUR SSID` and `YOUR SSID PASSWORD` with the appropriate information.
+Parts List with Amazon links and cost can be found here: <br><a href="Hardware/Turnstile Cost.xlsx"> Parts List </a>
+
+<br>
+
+`secrets.h` will need to be created, in the Arduino Project, with the following content
+<br>Replace `YOUR SSID` and `YOUR SSID PASSWORD` with the appropriate information
 
    ```c
 #define SECRET_SSID "YOUR SSID"
 #define SECRET_PASS "YOUR SSID PASSWORD"
    ```
 
-<br><img style="max-width: 35%; height: auto; " src="Hardware/Turnstile_bb.png">
+
+<br><img style="width: 50%; height: auto; " src="Hardware/Turnstile_bb.png">
+<br>
+
+### Sample LCD Display
+<img style="width: 50%; height: auto; " src="Hardware/LCD_Backlight_Label.jpg">
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -170,7 +180,8 @@ Instructions for setting up PHP with IIS can be found here:
 
 `index.php` should be added to the web server list of default pages.
 
-`secrets.php` will need to be created with the following content. Replace defaults with appropriate information.
+`secrets.php` will need to be created with the following content
+<br>Replace defaults with appropriate information
 
    ```php
 <?php
@@ -181,7 +192,7 @@ $DB_NAME = "YOUR DB NAME";
    ```
 
 CSS files are not included
-
+<br>
 ### Turnstile Report
 
 Page has not been developed
@@ -189,13 +200,13 @@ Page has not been developed
 <br>
 Displays all the hourlies from one ride for the selected day and park hours
 <br>Displays the accumulated riders, percent utilization, and rides per guest
-
+<br>
 ### Hourly
 
 Displays the hourly count from all rides at the selected Date/Time
 <br>Defaults to the most recent hourly
 
-<img style="max-width: 40%; height: auto;" src="Web Files/Hourly_Screenshot.png" />
+<img style="width: 40%; height: auto;" src="Web Files/Hourly_Screenshot.png" /><br>
 
 ### Assign Clicker
 
@@ -205,7 +216,7 @@ Allows easy assignment of the ESP to Rides.
 MAC Addresses are pulled from the `mac` table
 <br>Ride Names are pulled from the `seats` table
 
-<img style="max-width: 40%; height: auto;" src="Web Files/Assign_Screenshot.png" />
+<img style="width: 40%; height: auto;" src="Web Files/Assign_Screenshot.png" /><br>
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
