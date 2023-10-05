@@ -23,7 +23,7 @@ U8G2_SSD1306_128X64_NONAME_F_SW_I2C lcd(U8G2_R0, 14, 12, U8X8_PIN_NONE);
 const int waitButtonPin = 16;
 const int emptyButtonPin = 15;
 const int cycleButtonPin = 13;
-//const int unitButtonPin = 6;
+const int unitButtonPin = 10;
 const int sclPin = 5;
 const int sdaPin = 4;
 
@@ -52,8 +52,8 @@ int rideUnits = 1;
 
 // the following variables are unsigned long's because the time, measured in miliseconds,
 // will quickly become a bigger number than can be stored in an int.
-unsigned long lastDebounceTime[3] = { 0, 0, 0 };  // the last time the output pin was toggled
-unsigned long debounceDelay = 50;                 // the debounce time; increase if the output flickers
+//unsigned long lastDebounceTime[3] = { 0, 0, 0 };  // the last time the output pin was toggled
+unsigned long debounceDelay = 200;  // the debounce time; increase if the output flickers
 
 void setup() {
   Serial.begin(9600);
@@ -83,7 +83,7 @@ void setup() {
   pinMode(waitButtonPin, INPUT);
   pinMode(emptyButtonPin, INPUT);
   pinMode(cycleButtonPin, INPUT);
-  //pinMode(unitButtonPin, INPUT);
+  pinMode(unitButtonPin, INPUT);
 
   attachInterrupt(digitalPinToInterrupt(cycleButtonPin), cyclePress, HIGH);
   attachInterrupt(digitalPinToInterrupt(emptyButtonPin), emptyPress, HIGH);
@@ -154,17 +154,15 @@ void loop() {
 
     //lcd.setBacklight(HIGH);
   }
-  /*
-  else if(digitalRead(unitButtonPin))
-  {
+
+  else if (digitalRead(unitButtonPin)) {
     rideUnits -= buttonInput(1, emptyButtonPin);
     rideUnits += buttonInput(2, cycleButtonPin);
-    if (rideUnits < 1)
-    {
+    if (rideUnits < 1) {
       rideUnits = 1;
     }
   }
-  */
+
   else {
     //empties += buttonInput(1, emptyButtonPin);
     //cycles += buttonInput(2, cycleButtonPin);
@@ -172,11 +170,11 @@ void loop() {
 }
 
 ICACHE_RAM_ATTR void cyclePress() {
-  if (!digitalRead(waitButtonPin)) {
+  if (!digitalRead(waitButtonPin) && !digitalRead(unitButtonPin)) {
     static unsigned long last_interrupt_time = 0;
     unsigned long interrupt_time = millis();
     // If interrupts come faster than 200ms, assume it's a bounce and ignore
-    if (interrupt_time - last_interrupt_time > 200) {
+    if (interrupt_time - last_interrupt_time > debounceDelay) {
       cycles += 1;
     }
     last_interrupt_time = interrupt_time;
@@ -184,11 +182,11 @@ ICACHE_RAM_ATTR void cyclePress() {
 }
 
 ICACHE_RAM_ATTR void emptyPress() {
-  if (!digitalRead(waitButtonPin)) {
+  if (!digitalRead(waitButtonPin) && !digitalRead(unitButtonPin)) {
     static unsigned long last_interrupt_time = 0;
     unsigned long interrupt_time = millis();
     // If interrupts come faster than 200ms, assume it's a bounce and ignore
-    if (interrupt_time - last_interrupt_time > 200) {
+    if (interrupt_time - last_interrupt_time > debounceDelay) {
       empties += 1;
     }
     last_interrupt_time = interrupt_time;
