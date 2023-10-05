@@ -10,7 +10,7 @@ include("fetch-script.php");
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Assign Clicker - Ride Count</title>
+  <title>Rider Count</title>
   <link href="../bootstrap.css" rel="stylesheet">
 
   <link href="../css.css" rel="stylesheet">
@@ -25,7 +25,8 @@ include("fetch-script.php");
 
 
 
-            <li><a href="">Turnstile Report</a></li>
+            <li><a href="../report.php">Turnstile Report</a></li>
+            <li><a href="../daily.php">Daily</a></li>
             <li><a href="../hourly.php">Hourly</a></li>
             <li><a href="../assignRide">Assign Clicker</a></li>
 

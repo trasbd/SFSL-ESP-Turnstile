@@ -32,17 +32,3 @@
       </div>
 
     </nav>
-        <div id="mainContent" class="container">
-            
-        </div>
-
-
-
-
-        <footer class="navbar-inverse">
-            <div class="container">
-                <!-- <div class="pull-left collapse navbar-collapse"><img src="./Home - EAS_files/header_logo.png"
-                        alt="Six Flags Logo" id="footer-logo"></div> -->
-
-            </div>
-        </footer>
