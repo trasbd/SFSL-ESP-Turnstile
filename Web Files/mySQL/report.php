@@ -89,6 +89,9 @@ $eodRow = $endOfDayReturn->fetch_assoc();
 <div id="mainContent" class="container">
     <h3>Turnstile Report</h3>
     <br>
+    Demo/Sample Data: River King Mine Train 10/4/2023 11:00-6:00
+    <br>
+    <br>
     <form method="POST">
         Ride: <select name="inputRide" value="<?php echo $rideName; ?>">
             <?php while ($option = $rideNames->fetch_assoc()) { ?>
