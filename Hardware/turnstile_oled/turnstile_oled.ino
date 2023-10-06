@@ -23,9 +23,9 @@ U8G2_SSD1306_128X64_NONAME_F_SW_I2C lcd(U8G2_R0, 14, 12, U8X8_PIN_NONE);
 const int waitButtonPin = 16;
 const int emptyButtonPin = 15;
 const int cycleButtonPin = 13;
-const int unitButtonPin = 10;
-const int sclPin = 5;
-const int sdaPin = 4;
+const int unitButtonPin = 5;
+//const int sclPin = 5;
+//const int sdaPin = 4;
 
 // Variables will change:
 time_t now;  // this is the epoch
@@ -156,8 +156,9 @@ void loop() {
   }
 
   else if (digitalRead(unitButtonPin)) {
-    rideUnits -= buttonInput(1, emptyButtonPin);
-    rideUnits += buttonInput(2, cycleButtonPin);
+    rideUnits -= digitalRead(cycleButtonPin);
+    rideUnits += digitalRead(emptyButtonPin);
+    //Serial.println(digitalRead(unitButtonPin));
     if (rideUnits < 1) {
       rideUnits = 1;
     }
@@ -296,7 +297,10 @@ void updateScreen() {
   lcd.print(" ");
 
   lcd.setCursor(84, 64);
-  lcd.print("UNT: ");
+  if (rideUnits < 10)
+    lcd.print("UNT: ");
+  else
+    lcd.print("UNT:");
   lcd.print(rideUnits);
   lcd.sendBuffer();
   // delay(1000);
