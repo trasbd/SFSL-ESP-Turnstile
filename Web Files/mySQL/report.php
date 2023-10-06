@@ -37,7 +37,7 @@ SELECT
 FROM
     hourly AS h1
 JOIN hourly AS h2 ON h1.time >= h2.time
-JOIN capacity ON h1.ride = capacity.ride AND h1.units = capacity.units
+LEFT JOIN capacity ON h1.ride = capacity.ride AND h1.units = capacity.units
 WHERE
     h1.ride = '$rideName' AND h2.ride = '$rideName' 
     AND h1.date = '$dateWant' AND h2.date = '$dateWant'
@@ -174,16 +174,21 @@ $eodRow = $endOfDayReturn->fetch_assoc();
             </tr>
             <tr>
                 <th>% Utilization</th>
-                <th><?php if((float)$eodRow['totalCap']) echo number_format(round(((float)$eodRow['totalRiders'] / (float)$eodRow['totalCap'] ) * 100, 1),1);?>%</th>
+                <th>
+                    <?php if ((float) $eodRow['totalCap'])
+                        echo number_format(round(((float) $eodRow['totalRiders'] / (float) $eodRow['totalCap']) * 100, 1), 1); ?>%
+                </th>
             </tr>
             <tr>
                 <th>Rides / Guest</th>
-                <th><?php echo number_format(round(((float)$eodRow['totalRiders'] / (float)$attendance ), 3),3);?></th>
+                <th>
+                    <?php echo number_format(round(((float) $eodRow['totalRiders'] / (float) $attendance), 3), 3); ?>
+                </th>
             </tr>
         </tbody>
     </table>
     <br>
-
+    
 </div>
 
 <br>
