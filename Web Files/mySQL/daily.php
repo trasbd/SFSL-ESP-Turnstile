@@ -67,7 +67,7 @@ $result = $conn->query($query);
 <?php include('./header.php'); ?>
 
 <div id="mainContent" class="container">
-  <h3>Hourly Count</h3>
+  <h3>Daily Report</h3>
   <br>
   <form method="POST">
     <input type="date" name="inputDate" value="<?php echo $dateValue; ?>" />
