@@ -35,6 +35,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Check connection
 
+    $date = date('Y-m-d', $date);
+
+
     $sql = <<<SQLSTR
     UPDATE
         `hourly`
@@ -42,6 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         `cycles` = cycles + $cycles,
         `empty` = empty + $empties,
         `hourly` = hourly + $hourly
+        
     WHERE
         date = '$date' AND
         time = '$time' AND
