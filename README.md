@@ -117,8 +117,8 @@ Parts List with Amazon links and cost can be found here: <br><a href="Hardware/T
 <br><img style="width: 50%; height: auto; " src="Hardware/Turnstile_bb.png">
 <br>
 
-### Sample LCD Display
-<img style="width: 50%; height: auto; " src="Hardware/LCD_Backlight_Label.jpg">
+### Sample OLED Display
+<img style="width: 50%; height: auto; " src="Hardware/turnstile_oled/oled.jpg">
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
