@@ -95,7 +95,7 @@
 ## Hardware
 
 * 1 x ESP8266 (NodeMCU v3)
-* 1 x LCD 2x16 (PCF8574 Attached)
+* 1 x 0.96inch 128×64 I2C OLED SSD1306
 * 4 x Momentary Push Button
 * 4 x 10kΩ Resistor
 
@@ -124,14 +124,17 @@ Parts List with Amazon links and cost can be found here: <br><a href="Hardware/T
 
 ## Database
 
-Three tables are required:
+Four tables are required:
 * hourly
 * seats
 * mac
+* capacity
 
 `seats` needs to be populated with Rides Names and Seats
 <br>
-`mac` needs to be populated with the ESP MAC Addresses, Ride assignment can be done from the Web Interface 
+`mac` needs to be populated with the ESP MAC Addresses, Ride assignment can be done from the Web Interface
+<br>
+`capacity` should be populated with Ride Names, Units, and Capacities
 
 Sample ```CREATE TABLE``` files are included
 <br>
