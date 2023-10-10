@@ -5,14 +5,18 @@
 #include <ESP8266WiFi.h>
 #include <ESP8266HTTPClient.h>
 #include <time.h>
+//#include <WiFiClientSecure.h>
 
 #include "secrects.h"
 
 #define MY_NTP_SERVER "time.windows.com"
 #define MY_TZ "CST6CDT,M3.2.0,M11.1.0"
 
-const char *ssid = SECRET_SSID;
-const char *password = SECRET_PASS;
+//const char *ssid = SECRET_SSID;
+const char *ssid = "SixFlagsGuest";
+//const char *password = SECRET_PASS;
+
+//WiFiClientSecure clientSSL;
 
 const char *serverName = "http://trasbd.net/post-hourly.php";
 
@@ -71,7 +75,8 @@ void setup()
   lcd.print("Please Wait...");
   lcd.sendBuffer();
 
-  WiFi.begin(ssid, password);
+  //WiFi.begin(ssid, password);
+  WiFi.begin(ssid);
   while (WiFi.status() != WL_CONNECTED)
   {
     delay(500);
@@ -80,6 +85,11 @@ void setup()
 
   Serial.println();
   Serial.println(WiFi.macAddress());
+
+  WiFi.setAutoReconnect(true);
+  WiFi.persistent(true);
+
+  //clientSSL.setInsecure();
 
   // zero(hourlyCycles);
   // zero(hourlyTotal);
@@ -101,6 +111,7 @@ void setup()
   http.begin(client, "http://trasbd.net/get-seats.php?mac=" + WiFi.macAddress());
   http.GET();
   String getResult = http.getString();
+  Serial.println(getResult);
   // Serial.println(getResult);
   int bracketIndex = getResult.indexOf('<');
   seats = getResult.substring(0, bracketIndex).toInt();
@@ -396,6 +407,7 @@ void updateHourly()
     {
       Serial.print("HTTP Response code: ");
       Serial.println(httpResponseCode);
+      Serial.println(http.getString());
     }
     else
     {
