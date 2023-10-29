@@ -1,0 +1,43 @@
+$session = New-Object Microsoft.PowerShell.Commands.WebRequestSession
+$session.UserAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36"
+$session.Cookies.Add((New-Object System.Net.Cookie("_vwo_uuid_v2", "DC5F9C84C14585D63807B40567C8ABB78|538a83194f7399e5652b9da0bd1506f0", "/", ".sixflags.com")))
+$session.Cookies.Add((New-Object System.Net.Cookie("_tt_enable_cookie", "1", "/", ".sixflags.com")))
+$session.Cookies.Add((New-Object System.Net.Cookie("_ttp", "dim6AhOMHNkAtlr4llelsEsH7Eh", "/", ".sixflags.com")))
+$session.Cookies.Add((New-Object System.Net.Cookie("_clck", "1xkgduy|2|fby|0|1242", "/", ".sixflags.com")))
+$session.Cookies.Add((New-Object System.Net.Cookie("_ga_1LCCYBMLBV", "GS1.1.1685153935.1.1.1685153977.18.0.0", "/", ".sixflags.com")))
+$session.Cookies.Add((New-Object System.Net.Cookie("_ga", "GA1.1.657670252.1685153212", "/", ".sixflags.com")))
+$session.Cookies.Add((New-Object System.Net.Cookie("_ga_XWH5FCZYVQ", "GS1.1.1685154662.1.1.1685154685.0.0.0", "/", ".sixflags.com")))
+$session.Cookies.Add((New-Object System.Net.Cookie("_ga_97GMSYVNHS", "GS1.1.1685154662.1.1.1685154686.0.0.0", "/", ".sixflags.com")))
+$session.Cookies.Add((New-Object System.Net.Cookie("__cf_bm", "bNmYZ.55G4lwyiW.RItkAXbZOYbriG5uHaxclsk1qHY-1696631180-0-AWCuWZuwwq5Ayirsh9gk2xt4GRNrAnl0ZzAblMQyThC+87eyQlzmAlAkgM6EhVV6X5LX7kCoCpLed5w8j24Zcjc=", "/", ".sixflags.com")))
+$session.Cookies.Add((New-Object System.Net.Cookie("AWSALB", "bQq0gOCnmpwFzSiK3r68/LC/oxf+aQ2JXFp0QUhGiBmGj792vA5vmD8v3HKVuxKdpDB2PiOeF7nOOk5Dr2er5PZeBiJFRkirZ482J9sdzM1TjxPbCKnsHh82dSrR", "/", "mypass.sixflags.com")))
+$session.Cookies.Add((New-Object System.Net.Cookie("AWSALBCORS", "bQq0gOCnmpwFzSiK3r68/LC/oxf+aQ2JXFp0QUhGiBmGj792vA5vmD8v3HKVuxKdpDB2PiOeF7nOOk5Dr2er5PZeBiJFRkirZ482J9sdzM1TjxPbCKnsHh82dSrR", "/", "mypass.sixflags.com")))
+$session.Cookies.Add((New-Object System.Net.Cookie("cf_clearance", "1TZfGRCwJW13BNDwEI2S7qa50E1aOg_KyYvYvVEBKis-1696631186-0-1-3fa0253b.aa3a860a.f7dc5992-0.2.1696631186", "/", ".sixflags.com")))
+Invoke-WebRequest -UseBasicParsing -Uri "https://mypass.sixflags.com/wifiregister/register.aspx?base_grant_url=https%3a%2f%2fna.network-auth.com%2fsplash%2fl1fbNcUc.3.417%2fgrant&gateway_id=246656701365258&node_id=246656701365258&park=SFSL&user_continue_url=http%3a%2f%2fwww.msftconnecttest.com%2fredirect&client_ip=10.118.147.30&client_mac=1c%3ac1%3a0c%3adb%3a35%3afd&node_mac=e0%3a55%3a3d%3a10%3afc%3a0a" `
+-Method "POST" `
+-WebSession $session `
+-Headers @{
+"authority"="mypass.sixflags.com"
+  "method"="POST"
+  "path"="/wifiregister/register.aspx?base_grant_url=https%3a%2f%2fna.network-auth.com%2fsplash%2fl1fbNcUc.3.417%2fgrant&gateway_id=246656701365258&node_id=246656701365258&park=SFSL&user_continue_url=http%3a%2f%2fwww.msftconnecttest.com%2fredirect&client_ip=10.118.147.30&client_mac=1c%3ac1%3a0c%3adb%3a35%3afd&node_mac=e0%3a55%3a3d%3a10%3afc%3a0a"
+  "scheme"="https"
+  "accept"="text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+  "accept-encoding"="gzip, deflate, br"
+  "accept-language"="en-US,en;q=0.9,es;q=0.8"
+  "cache-control"="max-age=0"
+  "origin"="https://mypass.sixflags.com"
+  "referer"="https://mypass.sixflags.com/wifiregister/register.aspx?base_grant_url=https%3A%2F%2Fna.network-auth.com%2Fsplash%2Fl1fbNcUc.3.417%2Fgrant&gateway_id=246656701365258&node_id=246656701365258&park=SFSL&user_continue_url=http%3A%2F%2Fwww.msftconnecttest.com%2Fredirect&client_ip=10.118.147.30&client_mac=1c:c1:0c:db:35:fd&node_mac=e0:55:3d:10:fc:0a"
+  "sec-ch-ua"="`"Google Chrome`";v=`"117`", `"Not;A=Brand`";v=`"8`", `"Chromium`";v=`"117`""
+  "sec-ch-ua-mobile"="?0"
+  "sec-ch-ua-platform"="`"Windows`""
+  "sec-fetch-dest"="document"
+  "sec-fetch-mode"="navigate"
+  "sec-fetch-site"="same-origin"
+  "sec-fetch-user"="?1"
+  "upgrade-insecure-requests"="1"
+} `
+-ContentType "application/x-www-form-urlencoded" `
+-Body "__EVENTTARGET=&__EVENTARGUMENT=&__LASTFOCUS=&__VIEWSTATE=fsyRJdEtigQRSZsCgkD0a532beRApZJ2PkiJ%2FfNfqM2Qym%2Fnuqb7bteFLY14BjGKbp8OsbyVqTxkAB6opLgmB17G8Mjqi3w%2Bq%2FSChplB1GlWzCCp7yE72CyNtSfeptrjiIPBv63Pnloea3PL%2BygHJeg8eG3lGDByVRA%2BHmYeRgmzuYOfrB8v6mMMTnqZdAjAR8uDcRdQN7%2FEcqkIc7nZj5%2BClC9ilxVVEiOe1Bxjk1qxNvsiFtF%2B2qxZjZpB%2FsBjB2qmBTX%2FdaYnToPVLBt3ezpxLEwCdr3HTW7h9CQeaur7qksATQG9RwbGlQZxlSeSYij6jKSRUIdtEkBBQLkB0tRyrRGKNcF246eGLLBLyXNQoakpcttAIC2bpuYDMaW30jOMMjO7m8ntRU7w4WQAH12aS1IL2zMy644rw5AzB1oBZ9hxPDHf%2BXYv58%2Fxl%2Byui%2F136xr8mKgjJCt4fww2%2BXz8dAAoWqz%2FuFszhyRtOAZpYYYeWXjgwAgo%2FoqIODzjZIrbd89ilgbLTPEAsZnrKq9mtVjCr2RYVyED%2BGqSZgJG770uQASN8H2JWHRu%2F3LdYtZOMstKEE4MFhXGXiYw1C6oxPbuSHCx3lbqH5YYmItY1iQP58V73z0rf3uE9DXP17SEJauY1GEMMgGVBoQDG%2B2ZqjvszHo4gTelkGMB3AeMTlk9pS21f%2Fx8e3X%2Fwl3g1CYQFOalK%2FxsAYOJi2kiGSWilVwMOv1ASgcjiZvD4vUl6H6IXMRJ2cGprNBk%2BczvANKlJeMPUVm%2B7L6NQpZQXyhByr9bMWHBV4yLfuvL0BcrwWfKaf2fvjKwzkNhJhwzlYhI65NkKaBsWasLSbTRc4lzLIK%2B4toy4BnjKNabFsSvoaRdss1pTno%2Fhf3QDl6OUqS4l%2FQM4HKSVJ3KUk1iwXBHyBDOqk0gYkV0HvKS0rk4fzdh20pCbzIeOy7duId%2B8ycyNCfAP%2Fxno0VHa%2BPTf1gU64atjb9%2B1koRgWfdkC4gc%2BkD%2BofcvS2NIL%2BCbIeIG9enEwluc9XMCSsYcGEUMpslShudvTdmx%2F1mw7S24GimZpM1joPAWDh1W0ZW4VjvvR9881m6NDIKdpFVoab%2BitWsQJUuNBwUIn9GM%2BMdyR41gPTmM05byjzBdO4rGlP4w13s4Y8B3uMYSEiKH0ii4OCO8JMMZZn6bJbJ7LTx3ZNaKLo4vF4HuhOZ%2BDjHcgzpD054YqSBPMvubc2tRpPc%2FWvgfCsEZU%2Fv0P6mZtPb8D0%2F9KL1a9%2FYiUvl49GsW2guUTbamlfFdLxCk8liSXmC1A%3D%3D&__VIEWSTATEGENERATOR=85DEC2D5&__EVENTVALIDATION=75W00Y6dOPTh0522MPEcZJUrV4DPSDOekGLNsptihcNrXD%2FENpyHzAoM1qL4w29O5x8xvyXksUsrGvQ6IWJndGllP2socPhHITwIJPf%2FpiojNRukq%2FX7RArvLkirrb4JQDjHuQkG0twQc851kNK0lFRvDnkOvNXXltMDPPUt%2FNCCkyX3urp5bQI0ZYlHJLwuJNRD%2BvCVLqBPXvo4GeCvnGNfq3lTpIAdsulh00oJiRDA1I96oGRH%2FKyvYJzjnBYDujqf%2Bp9%2FxnkFr9UczeqOLLkP0bWNTPVm7nlPpfLzUF8ka1DOJf0xva8hu4LePbc2VukdS3a76q7WkjDR%2FCWdX%2BxIN1IoH83VIE0NbU6cEWf5V7BgQ4uS9xRu5SymcxRGlaxORr6CfgUF2LGKA7HH%2BaHldMcsaV0A8d1UZpN0rn0KCwjCMgQuqsnpCis2oZZUhW%2F0aIIjjj1%2Bo0PiSif20g%3D%3D&fldLanguage=1&fldEmail=thomas.m.robert%40gmail.com&cmdSubmit=Submit&wlan_id=246656701365258&ap_mac=e0%3A55%3A3d%3A10%3Afc%3A0a&client_mac=1c%3Ac1%3A0c%3Adb%3A35%3Afd&client_ip=10.118.147.30&url=http%3A%2F%2Fwww.msftconnecttest.com%2Fredirect&ap_name=246656701365258&site_name=SFSL&base_grant_url=https%3A%2F%2Fna.network-auth.com%2Fsplash%2Fl1fbNcUc.3.417%2Fgrant&ap_type=2&parkidno=3&nexturl=https%3A%2F%2Fsf-static.sixflags.com%2Fwifiregistration%2Fpages%2Fthemeparks-c1b-skiptheline-success.html"
+
+
+
+fldLanguage=1&fldEmail=thomas.m.robert%40gmail.com&cmdSubmit=Submit
